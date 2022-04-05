@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/all.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<!-- start side menu -->
+			<div class="side-menu">
+				<ul class="links">
+					<h2>hello world</h2>
+					<li>
+						<a class="icon" href="index.html"><i class="fas fa-home"></i></a>
+						<a href="index.html">لوحة التحكم</a>
+					</li>
+					<li>
+						<a class="icon" href="users.html"><i class="fas fa-user"></i></a>
+
+						<a href="users.html">ادارة المستخدمين</a>
+					</li>
+					<li>
+						<a class="icon" href="category.html"><i class="fas fa-book"></i></a>
+						<a href="category.html">التصنيفات</a>
+					</li>
+					<li>
+						<a class="icon" href="products.html"><i class="fas fa-user"></i></a>
+						<a href="products.html">ادارة المنتجات</a>
+					</li>
+					<li>
+						<a class="icon" href="users.html"><i class="fas fa-user"></i></a>
+						<a href="">ادارة المبيعات</a>
+					</li>
+					<li>
+						<a class="icon" href="users.html"><i class="fas fa-user"></i></a>
+						<a href="">تقرير المبيعات</a>
+					</li>
+					<li>
+						<a class="icon" href="users.html"><i class="fas fa-user"></i></a>
+						<a href="">تسجيل خروج</a>
+					</li>
+					<li class="dark"><i class="fas fa-moon"></i></li>
+				</ul>
+			</div>
+			<!-- start add category -->
+			<section class="forms">
+				<form class="add-items add-products" action="">
+					<div class="group-form">
+						<label for="name">اسم العميل</label>
+						<input id="name" type="text" name="name" />
+					</div>
+					<div class="group-form">
+						<label for="date">تاريخ الشراء</label>
+						<input id="date" type="date" name="date" value="2001-01-12" />
+					</div>
+					<div class="sales">
+						<div class="group-form">
+							<label for="category">المنتج</label>
+							<select id="products" name="products">
+								<option value="default" selected disabled>
+									-- اختر منتج --
+								</option>
+
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</div>
+						<div class="group-form">
+							<label for="quantity">الكمية</label>
+							<input
+								id="quantity"
+								type="number"
+								name="quantity"
+								data-total="#total1"
+								data-price="#price1"
+							/>
+						</div>
+						<div class="group-form">
+							<label for="price">سعر البيع</label>
+							<input id="price1" type="number" name="price" />
+						</div>
+						<div class="group-form">
+							<label for="total">المجموع</label>
+							<input id="total1" type="number" name="total" />
+						</div>
+
+						<a class="add-sales">اضافة</a>
+					</div>
+
+					<div id="demo"></div>
+
+					<div class="group-form">
+						<label for="final-total">المجموع النهائي</label>
+						<input id="final-total" type="number" name="final-total" />
+					</div>
+					<div class="group-form">
+						<label for="notes">الملاحظات</label>
+						<input id="notes" type="text" name="notes" />
+					</div>
+					<button>اضافة</button>
+				</form>
+			</section>
+		</div>
+		<!-- <progress></progress> -->
+		<!-- <button class="dark"><i class="fas fa-moon"></i></button> -->
+
+		<!-- <form>
+			<h2>تسجيل عضو جديد</h2>
+			<label for="name">الاسم كامل</label>
+			<input id="name" type="text" name="name" />
+			<label for="mony">الدخل</label>
+			<input type="text" name="mony" id="mony" />
+			<label for="age">السن</label>
+			<input type="text" name="age" id="age" />
+			<label for="job">الوظيفة</label>
+			<select id="job" name="job">
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+				<option value="mercedes">Mercedes</option>
+				<option value="audi">Audi</option>
+			</select>
+			<button class="send">إنشاء</button>
+		</form> -->
+		<script src="js/dark-mode.js"></script>
+	</body>
+</html>
