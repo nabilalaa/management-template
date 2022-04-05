@@ -337,7 +337,6 @@ tbody td {
 .add-items button {
 	width: 75px;
 	height: 40px;
-	/* margin: auto; */
 	cursor: pointer;
 	border: 1px solid;
 	display: block !important	;
@@ -347,7 +346,7 @@ tbody td {
 	opacity: 0.8;
 }
 
-/* style add-products.html */
+/* style add-products.html -- add-sales.html  */
 .add-products {
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -400,32 +399,39 @@ select {
 #demo {
 	width: 100%;
 }
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
 
-/* Firefox */
 input[type="number"] {
 	-moz-appearance: none;
 }
-/* form {
+
+/* start login.html */
+.login {
 	display: flex;
 	flex-direction: column;
 	max-width: 500px;
 	margin: 20px auto;
 	font-size: 18px;
+	background-color: #e9ecef;
+	padding: 100px 50px;
+}
+
+h1 {
+	text-align: center;
+	text-transform: capitalize;
 }
 h2 {
 	margin-bottom: 20px;
 	text-align: center;
 }
-label {
+.login label {
 	margin-bottom: 10px;
 }
-input {
+.login input {
 	width: 100%;
 	margin-bottom: 20px;
 	border: 1px solid;
@@ -434,7 +440,6 @@ input {
 	height: 30px;
 	font-size: 18px;
 }
-
 
 .send {
 	width: 100px;
@@ -446,12 +451,3 @@ input {
 .send:hover {
 	opacity: 0.8;
 }
-
-select {
-	outline: none;
-	width: 100%;
-	margin-bottom: 20px;
-	border: 1px solid;
-	outline: none;
-	height: 30px;
-} */

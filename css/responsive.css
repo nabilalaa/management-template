@@ -72,6 +72,14 @@
 	.sales {
 		flex-direction: column;
 	}
+	.login {
+		margin: 20px;
+		padding: 100px 20px;
+		max-width: 100%;
+	}
+	h1 {
+		font-size: 7vw;
+	}
 }
 
 /* Small */
