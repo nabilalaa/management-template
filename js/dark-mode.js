@@ -77,7 +77,7 @@ function addsale() {
 		</div>
 	</div>`;
 
-	document.getElementById("demo").innerHTML += newSales;
+	document.getElementById("demo").insertAdjacentHTML("beforeend", newSales);
 
 	let quantity = document.querySelectorAll("#quantity"),
 		ftotal = document.getElementById("final-total");
@@ -90,8 +90,34 @@ function addsale() {
 			console.log(price);
 			console.log(price.value * q.value);
 			total.value = price.value * q.value;
+			let listTotal = document.getElementsByName("total");
+			console.log(listTotal);
+			let list = [];
+			listTotal.forEach((ele) => {
+				list.push(ele.value);
+				ftotal.value = d3.sum(list);
+				console.log(d3.sum(list));
+				// Math.sum;
+			});
 		};
 	});
 }
 
 add.addEventListener("click", addsale);
+
+let quantity = document.querySelectorAll("#quantity"),
+	ftotal = document.getElementById("final-total");
+
+quantity.forEach((q) => {
+	q.onkeyup = function () {
+		let total = document.querySelector(q.dataset.total);
+		let price = document.querySelector(q.dataset.price);
+		let ftotal = document.querySelector("#final-total");
+
+		console.log(total);
+		console.log(price);
+		console.log(price.value * q.value);
+		total.value = price.value * q.value;
+		ftotal.value = price.value * q.value;
+	};
+});

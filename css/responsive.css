@@ -141,7 +141,9 @@
 		grid-template-columns: 12% 88%;
 	}
 	/* start links */
-
+	.side-menu {
+		height: 100%;
+	}
 	.links {
 		text-align: center;
 	}

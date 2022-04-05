@@ -117,6 +117,7 @@ body {
 /* start side menu */
 
 .side-menu {
+	height: 100vh;
 	position: relative;
 	right: 0;
 	bottom: 0;
