@@ -17,11 +17,21 @@
 		<title>Document</title>
 	</head>
 	<body>
+		<!-- start nav -->
+		<nav>
+			<div class="nav-options">
+				<div class="logo"><h1>easy management</h1></div>
+
+				<div class="search-nav"><i class="fas fa-search"></i></div>
+				<div class="side-menu-btn"><i class="fas fa-bars"></i></div>
+			</div>
+			<div class="admin">admin: <span>nabil</span></div>
+		</nav>
 		<div class="container">
 			<!-- start side menu -->
 			<div class="side-menu">
 				<ul class="links">
-					<h2>hello world</h2>
+					<h2>القائمة</h2>
 					<li>
 						<a class="icon" href="index.html"><i class="fas fa-home"></i></a>
 						<a href="index.html">لوحة التحكم</a>
@@ -54,27 +64,164 @@
 					<li class="dark"><i class="fas fa-moon"></i></li>
 				</ul>
 			</div>
-		</div>
-		<!-- <progress></progress> -->
-		<!-- <button class="dark"><i class="fas fa-moon"></i></button> -->
+			<div class="index">
+				<div class="flex-charts">
+					<div class="chart">
+						<h3>المبيعات</h3>
+						<p>600$</p>
 
-		<!-- <form>
-			<h2>تسجيل عضو جديد</h2>
-			<label for="name">الاسم كامل</label>
-			<input id="name" type="text" name="name" />
-			<label for="mony">الدخل</label>
-			<input type="text" name="mony" id="mony" />
-			<label for="age">السن</label>
-			<input type="text" name="age" id="age" />
-			<label for="job">الوظيفة</label>
-			<select id="job" name="job">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="mercedes">Mercedes</option>
-				<option value="audi">Audi</option>
-			</select>
-			<button class="send">إنشاء</button>
-		</form> -->
+						<div class="chart-doughnut">
+							<div class="chart-labels">
+								<span class="label label-sales">المبيعات</span>
+								<span class="label label-category">التصنيفات</span>
+								<span class="label label-products">المنتجات</span>
+							</div>
+							<canvas id="doughnut"></canvas>
+						</div>
+					</div>
+
+					<div class="chart">
+						<h3>المبيعات</h3>
+						<p>600$</p>
+						<div class="chart-bar">
+							<canvas id="bar"></canvas>
+						</div>
+					</div>
+				</div>
+				<!-- start tables -->
+				<div class="tables">
+					<div class="options">
+						<form class="search">
+							<input type="text" />
+							<button>البحث</button>
+						</form>
+						<a class="add" href="add-products.html">
+							أضافة منتج جدبد
+							<i class="fas fa-plus"></i>
+						</a>
+					</div>
+					<table class="all-products">
+						<thead>
+							<tr>
+								<th>التسلسل</th>
+								<th>صورة المنتج</th>
+								<th>اسم المنتج</th>
+								<th>المتوفر في المخزن</th>
+								<th>سعر الشراء</th>
+								<th>سعر البيع</th>
+								<th>تاريخ اضافة المنتج</th>
+								<th>الحالة</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>صورة المنتج</td>
+								<td>اسم المنتج</td>
+								<td>المتوفر في المخزن</td>
+								<td>سعر الشراء</td>
+								<td>سعر البيع</td>
+								<td>تاريخ اضافة المنتج</td>
+								<td class="status">
+									<a href="">تعديل</a>
+									<a href="">مسح</a>
+								</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>صورة المنتج</td>
+								<td>اسم المنتج</td>
+								<td>المتوفر في المخزن</td>
+								<td>سعر الشراء</td>
+								<td>سعر البيع</td>
+								<td>تاريخ اضافة المنتج</td>
+								<td class="status">
+									<a href="">تعديل</a>
+									<a href="">مسح</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="t-responsive">
+						<div class="row">
+							<div class="item">التسلسل</div>
+							<div class="item">1</div>
+							<div class="item">اسم المستخدم</div>
+							<div class="item">نبيل علاء تادرس<</div>
+							<div class="item">الايميل</div>
+							<div class="item break-word">nabilalaa06@gmail.com</div>
+							<div class="item">دور المستخدم</div>
+							<div class="item">admin</div>
+							<div class="item">تاريخ</div>
+							<div class="item">1/1/2022</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+		<script>
+			// charts
+			const dataLine = {
+				labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+				datasets: [
+					{
+						label: "My First Dataset",
+						data: [65, 59, 80, 81, 56, 55, 40],
+						fill: true,
+						borderColor: "rgb(45, 192, 192)",
+
+						tension: 0.1,
+					},
+				],
+			};
+			console.log(Array(document.querySelectorAll(".label")));
+			const dataDoughnut = {
+				datasets: [
+					{
+						data: [300, 50, 100],
+						backgroundColor: [
+							"rgb(255, 99, 132)",
+							"rgb(54, 162, 235)",
+							"rgb(255, 205, 86)",
+						],
+						hoverOffset: 4,
+					},
+				],
+			};
+
+			// config charts
+			const configDoughnut = {
+				type: "doughnut",
+				data: dataDoughnut,
+				options: {
+					plugins: {
+						legend: {
+							labels: {
+								font: {
+									size: 18,
+								},
+								color: "#fff",
+							},
+						},
+					},
+				},
+			};
+
+			const configLine = {
+				type: "line",
+				data: dataLine,
+			};
+			// render charts
+			const line = new Chart(document.getElementById("bar"), configLine);
+
+			const doughnut = new Chart(
+				document.getElementById("doughnut"),
+				configDoughnut
+			);
+		</script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

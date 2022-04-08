@@ -35,6 +35,15 @@ btn.onclick = function () {
 		btn.classList.add("light");
 		btn.classList.remove("dark");
 	}
+	// nav
+	document.querySelector("nav").classList.toggle("nav-dark-mode");
+};
+
+let sideMenuBtn = document.querySelector(".side-menu-btn");
+let sideMenu = document.querySelector(".side-menu");
+
+sideMenuBtn.onclick = function () {
+	sideMenu.classList.toggle("show-side");
 };
 
 // add sales
