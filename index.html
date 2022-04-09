@@ -33,33 +33,32 @@
 				<ul class="links">
 					<h2>القائمة</h2>
 					<li>
-						<a class="icon" href="index.html"><i class="fas fa-home"></i></a>
-						<a href="index.html">لوحة التحكم</a>
+						<a href="index.html"><i class="fas fa-home"></i>لوحة التحكم</a>
 					</li>
 					<li>
-						<a class="icon" href="users.html"><i class="fas fa-user"></i></a>
+						<a href="category.html"><i class="fas fa-book"></i>التصنيفات</a>
+					</li>
+					<li>
+						<a href="users.html"><i class="fas fa-user"></i>ادارة المستخدمين</a>
+					</li>
 
-						<a href="users.html">ادارة المستخدمين</a>
+					<li>
+						<a href="products.html"
+							><i class="fas fa-shopping-cart"></i>ادارة المنتجات</a
+						>
 					</li>
 					<li>
-						<a class="icon" href="category.html"><i class="fas fa-book"></i></a>
-						<a href="category.html">التصنيفات</a>
+						<a href="sales.html"
+							><i class="fas fa-money-bill"></i>ادارة المبيعات</a
+						>
 					</li>
 					<li>
-						<a class="icon" href="products.html"><i class="fas fa-user"></i></a>
-						<a href="products.html">ادارة المنتجات</a>
+						<a href="sales.html"
+							><i class="fas fa-chart-line"></i>تقرير المبيعات</a
+						>
 					</li>
 					<li>
-						<a class="icon" href="users.html"><i class="fas fa-user"></i></a>
-						<a href="">ادارة المبيعات</a>
-					</li>
-					<li>
-						<a class="icon" href="users.html"><i class="fas fa-user"></i></a>
-						<a href="">تقرير المبيعات</a>
-					</li>
-					<li>
-						<a class="icon" href="users.html"><i class="fas fa-user"></i></a>
-						<a href="">تسجيل خروج</a>
+						<a href=""><i class="fas fa-door-open"></i>تسجيل خروج</a>
 					</li>
 					<li class="dark"><i class="fas fa-moon"></i></li>
 				</ul>
@@ -88,74 +87,33 @@
 						</div>
 					</div>
 				</div>
-				<!-- start tables -->
-				<div class="tables">
-					<div class="options">
-						<form class="search">
-							<input type="text" />
-							<button>البحث</button>
-						</form>
-						<a class="add" href="add-products.html">
-							أضافة منتج جدبد
-							<i class="fas fa-plus"></i>
-						</a>
-					</div>
-					<table class="all-products">
-						<thead>
-							<tr>
-								<th>التسلسل</th>
-								<th>صورة المنتج</th>
-								<th>اسم المنتج</th>
-								<th>المتوفر في المخزن</th>
-								<th>سعر الشراء</th>
-								<th>سعر البيع</th>
-								<th>تاريخ اضافة المنتج</th>
-								<th>الحالة</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>صورة المنتج</td>
-								<td>اسم المنتج</td>
-								<td>المتوفر في المخزن</td>
-								<td>سعر الشراء</td>
-								<td>سعر البيع</td>
-								<td>تاريخ اضافة المنتج</td>
-								<td class="status">
-									<a href="">تعديل</a>
-									<a href="">مسح</a>
-								</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>صورة المنتج</td>
-								<td>اسم المنتج</td>
-								<td>المتوفر في المخزن</td>
-								<td>سعر الشراء</td>
-								<td>سعر البيع</td>
-								<td>تاريخ اضافة المنتج</td>
-								<td class="status">
-									<a href="">تعديل</a>
-									<a href="">مسح</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="t-responsive">
-						<div class="row">
-							<div class="item">التسلسل</div>
-							<div class="item">1</div>
-							<div class="item">اسم المستخدم</div>
-							<div class="item">نبيل علاء تادرس<</div>
-							<div class="item">الايميل</div>
-							<div class="item break-word">nabilalaa06@gmail.com</div>
-							<div class="item">دور المستخدم</div>
-							<div class="item">admin</div>
-							<div class="item">تاريخ</div>
-							<div class="item">1/1/2022</div>
+				<!-- start additems -->
+				<div class="flex-add">
+					<a href="add-products.html">
+						<div class="inner">
+							<h4>اضافة منتجات</h4>
+							<i class="fas fa-plus-circle"></i>
 						</div>
-					</div>
+					</a>
+
+					<a href="add-category.html">
+						<div class="inner">
+							<h4>اضافة تصنيف</h4>
+							<i class="fas fa-plus-circle"></i>
+						</div>
+					</a>
+					<a href="add-sales.html">
+						<div class="inner">
+							<h4>اضافة مبيعات</h4>
+							<i class="fas fa-plus-circle"></i>
+						</div>
+					</a>
+					<a href="add-user.html">
+						<div class="inner">
+							<h4>اضافة مستخدم</h4>
+							<i class="fas fa-plus-circle"></i>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -181,7 +139,7 @@
 			const dataDoughnut = {
 				datasets: [
 					{
-						data: [300, 50, 100],
+						data: [30, 50, 100],
 						backgroundColor: [
 							"rgb(255, 99, 132)",
 							"rgb(54, 162, 235)",

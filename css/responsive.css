@@ -25,20 +25,7 @@
 	/* start responive table */
 
 	.t-responsive {
-		font-weight: bold;
 		display: block;
-	}
-	.row {
-		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		background-color: #ced4da;
-		margin-bottom: 10px;
-	}
-	.item {
-		width: 50%;
-		padding: 10px;
-		border-bottom: 1px solid;
 	}
 	/* start options */
 	.search {
@@ -90,6 +77,17 @@
 	.chart-labels {
 		flex-wrap: wrap;
 	}
+	.pag {
+		display: none;
+	}
+	/* start additems */
+	.flex-add {
+		flex-wrap: wrap;
+	}
+	.flex-add a {
+		width: 100%;
+		margin-bottom: 20px;
+	}
 }
 
 /* Small */
@@ -112,27 +110,9 @@
 	}
 	/* responive table */
 	.t-responsive {
-		background-color: #ced4da;
-		font-weight: bold;
 		display: block;
 	}
-	.t-responsive {
-		background-color: #ced4da;
-		font-weight: bold;
-		display: block;
-	}
-	.row {
-		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		background-color: #ced4da;
-		margin-bottom: 10px;
-	}
-	.item {
-		width: 50%;
-		padding: 10px;
-		border-bottom: 1px solid;
-	}
+
 	table {
 		display: none;
 	}
@@ -146,6 +126,13 @@
 	}
 	.chart {
 		width: 100%;
+	}
+	.pag {
+		display: none;
+	}
+	.flex-add a {
+		width: calc(100% / 2);
+		margin-bottom: 20px;
 	}
 }
 

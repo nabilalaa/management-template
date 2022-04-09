@@ -24,7 +24,8 @@ btn.onclick = function () {
 	document.querySelectorAll(".add-items").forEach((ele) => {
 		ele.classList.toggle("dark-mode-forms");
 	});
-	console.log(document.querySelector(".add-itmes"));
+	document.querySelector(".forms h3").classList.toggle("dark-mode");
+
 	// btn mode
 	if (btn.children[0].className == "fas fa-sun") {
 		btn.children[0].className = "fas fa-moon";
