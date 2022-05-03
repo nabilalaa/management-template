@@ -65,8 +65,7 @@
 			<!-- start add sales -->
 			<section class="forms">
 				<h3>اضافة مبيعات</h3>
-
-				<form class="add-items add-products" action="">
+				<form id="form" class="add-items add-products" action="">
 					<div class="group-form">
 						<label for="name">اسم العميل</label>
 						<input id="name" type="text" name="name" />
@@ -78,15 +77,17 @@
 					<div class="sales">
 						<div class="group-form">
 							<label for="category">المنتج</label>
-							<select id="products" name="products">
+							<select id="products" name="products" @Change="change">
 								<option value="default" selected disabled>
 									-- اختر منتج --
 								</option>
 
-								<option value="volvo"><a href="#">cool</a></option>
-								<option value="saab"><a href="#">nabil</a></option>
-								<option value="mercedes"><a href="#">alaa</a></option>
-								<option value="audi"><a href="#">tadros</a></option>
+								<option>
+									<a href="#">cool</a>
+								</option>
+								<option value="nabil"><a href="#">nabil</a></option>
+								<option value="alaa"><a href="#">alaa</a></option>
+								<option value="tadros"><a href="#">tadros</a></option>
 							</select>
 						</div>
 						<div class="group-form">
@@ -101,14 +102,14 @@
 						</div>
 						<div class="group-form">
 							<label for="price">سعر البيع</label>
-							<input id="price1" type="number" name="price" />
+							<input id="price1" type="text" name="price" :value="name" />
 						</div>
 						<div class="group-form">
 							<label for="total">المجموع</label>
 							<input id="total1" type="number" name="total" />
 						</div>
 
-						<a class="add-sales">اضافة</a>
+						<a @Click="test" class="add-sales">اضافة</a>
 					</div>
 
 					<div id="demo"></div>
@@ -121,10 +122,33 @@
 						<label for="notes">الملاحظات</label>
 						<input id="notes" type="text" name="notes" />
 					</div>
-					<button>اضافة</button>
+					<button>{{name}}</button>
 				</form>
 			</section>
 		</div>
+		<script src="https://unpkg.com/vue@3"></script>
+		<script>
+			Vue.createApp({
+				data() {
+					return {
+						name: "nail",
+						test: {
+							cool: 0,
+							nabil: 2,
+							alaa: 4,
+							tadros: 5,
+						},
+					};
+				},
+
+				methods: {
+					change(e) {
+						let id = e.target.value;
+						this.name = this.test[id];
+					},
+				},
+			}).mount("form");
+		</script>
 		<script src="js/dark-mode-forms.js"></script>
 		<script src="https://d3js.org/d3.v7.min.js"></script>
 	</body>

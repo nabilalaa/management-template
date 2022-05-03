@@ -19,8 +19,10 @@
 	<body>
 		<!-- start nav -->
 		<nav>
-			<div class="nav-items">
+			<div class="nav-options">
 				<div class="logo"><h1>easy management</h1></div>
+
+				<div class="search-nav"><i class="fas fa-search"></i></div>
 				<div class="side-menu-btn"><i class="fas fa-bars"></i></div>
 			</div>
 			<div class="admin">admin: <span>nabil</span></div>
@@ -51,7 +53,7 @@
 						>
 					</li>
 					<li>
-						<a href="report-sales.html"
+						<a href="sales.html"
 							><i class="fas fa-chart-line"></i>تقرير المبيعات</a
 						>
 					</li>
@@ -85,33 +87,12 @@
 						</div>
 					</div>
 				</div>
-				<!-- start additems -->
-				<div class="flex-add">
-					<a href="add-products.html">
-						<div class="inner">
-							<h4>اضافة منتجات</h4>
-							<i class="fas fa-plus-circle"></i>
-						</div>
-					</a>
-
-					<a href="add-category.html">
-						<div class="inner">
-							<h4>اضافة تصنيف</h4>
-							<i class="fas fa-plus-circle"></i>
-						</div>
-					</a>
-					<a href="add-sales.html">
-						<div class="inner">
-							<h4>اضافة مبيعات</h4>
-							<i class="fas fa-plus-circle"></i>
-						</div>
-					</a>
-					<a href="add-user.html">
-						<div class="inner">
-							<h4>اضافة مستخدم</h4>
-							<i class="fas fa-plus-circle"></i>
-						</div>
-					</a>
+				<div class="chart chart-bars">
+					<h3>المبيعات</h3>
+					<p>600$</p>
+					<div class="chart-bar">
+						<canvas id="bar"></canvas>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -146,6 +127,34 @@
 					},
 				],
 			};
+			const data = {
+				labels: [1, 2],
+				datasets: [
+					{
+						label: "My First Dataset",
+						data: [65, 59, 80, 81, 56, 55, 40],
+						backgroundColor: [
+							"rgba(255, 99, 132, 0.2)",
+							"rgba(255, 159, 64, 0.2)",
+							"rgba(255, 205, 86, 0.2)",
+							"rgba(75, 192, 192, 0.2)",
+							"rgba(54, 162, 235, 0.2)",
+							"rgba(153, 102, 255, 0.2)",
+							"rgba(201, 203, 207, 0.2)",
+						],
+						borderColor: [
+							"rgb(255, 99, 132)",
+							"rgb(255, 159, 64)",
+							"rgb(255, 205, 86)",
+							"rgb(75, 192, 192)",
+							"rgb(54, 162, 235)",
+							"rgb(153, 102, 255)",
+							"rgb(201, 203, 207)",
+						],
+						borderWidth: 1,
+					},
+				],
+			};
 
 			// config charts
 			const configDoughnut = {
@@ -169,14 +178,26 @@
 				type: "line",
 				data: dataLine,
 			};
+			const config = {
+				type: "bar",
+				data: data,
+				options: {
+					scales: {
+						y: {
+							beginAtZero: true,
+						},
+					},
+				},
+			};
 			// render charts
 			const line = new Chart(document.getElementById("line"), configLine);
+			const bar = new Chart(document.getElementById("bar"), config);
 
 			const doughnut = new Chart(
 				document.getElementById("doughnut"),
 				configDoughnut
 			);
 		</script>
-		<script id="js" src="js/main.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

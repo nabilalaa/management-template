@@ -1,30 +1,30 @@
 let btn = document.querySelector(".dark");
+let darkMode = localStorage.getItem("darkMode");
 
-btn.onclick = function () {
+function enable() {
+	// form
+	document.querySelectorAll("input").forEach((ele) => {
+		ele.classList.add("dark-mode");
+	});
+	document.querySelectorAll("button").forEach((ele) => {
+		ele.classList.add("dark-mode-button");
+	});
+	document.querySelectorAll("select").forEach((ele) => {
+		ele.classList.add("dark-mode");
+	});
+	document.querySelectorAll(".add-items").forEach((ele) => {
+		ele.classList.add("dark-mode-forms");
+	});
+	document.querySelector(".forms h3").classList.add("dark-mode");
 	// body
-	document.body.classList.toggle("dark-mode");
+	document.body.classList.add("dark-mode");
 
 	// color links
 	document.querySelectorAll(".links li a").forEach((ele) => {
-		ele.classList.toggle("sidemenu-color");
+		ele.classList.add("sidemenu-color");
 	});
-
-	// background color links
-	document.querySelector(".side-menu").classList.toggle("sidemenu-dark");
-	// form
-	document.querySelectorAll("input").forEach((ele) => {
-		ele.classList.toggle("dark-mode");
-	});
-	document.querySelectorAll("button").forEach((ele) => {
-		ele.classList.toggle("dark-mode-button");
-	});
-	document.querySelectorAll("select").forEach((ele) => {
-		ele.classList.toggle("dark-mode");
-	});
-	document.querySelectorAll(".add-items").forEach((ele) => {
-		ele.classList.toggle("dark-mode-forms");
-	});
-	document.querySelector(".forms h3").classList.toggle("dark-mode");
+	// side menu
+	document.querySelector(".side-menu").classList.add("sidemenu-dark");
 
 	// btn mode
 	if (btn.children[0].className == "fas fa-sun") {
@@ -37,7 +37,96 @@ btn.onclick = function () {
 		btn.classList.remove("dark");
 	}
 	// nav
-	document.querySelector("nav").classList.toggle("nav-dark-mode");
+	document.querySelector("nav").classList.add("nav-dark-mode");
+	localStorage.setItem("darkMode", "enable");
+}
+
+function disabled() {
+	// form
+	document.querySelectorAll("input").forEach((ele) => {
+		ele.classList.remove("dark-mode");
+	});
+	document.querySelectorAll("button").forEach((ele) => {
+		ele.classList.remove("dark-mode-button");
+	});
+	document.querySelectorAll("select").forEach((ele) => {
+		ele.classList.remove("dark-mode");
+	});
+	document.querySelectorAll(".add-items").forEach((ele) => {
+		ele.classList.remove("dark-mode-forms");
+	});
+	document.querySelector(".forms h3").classList.remove("dark-mode");
+	// body
+	document.body.classList.remove("dark-mode");
+
+	// color links
+	document.querySelectorAll(".links li a").forEach((ele) => {
+		ele.classList.remove("sidemenu-color");
+	});
+
+	// side menu
+	document.querySelector(".side-menu").classList.remove("sidemenu-dark");
+
+	// btn mode
+	if (btn.children[0].className == "fas fa-sun") {
+		btn.children[0].className = "fas fa-moon";
+		btn.classList.add("dark");
+		btn.classList.remove("light");
+	} else {
+		btn.children[0].className = "fas fa-sun";
+		btn.classList.add("light");
+		btn.classList.remove("dark");
+	}
+	// nav
+	document.querySelector("nav").classList.remove("nav-dark-mode");
+	localStorage.setItem("darkMode", "disabled");
+}
+if (darkMode == "enable") {
+	// form
+	document.querySelectorAll("input").forEach((ele) => {
+		ele.classList.add("dark-mode");
+	});
+	document.querySelectorAll("button").forEach((ele) => {
+		ele.classList.add("dark-mode-button");
+	});
+	document.querySelectorAll("select").forEach((ele) => {
+		ele.classList.add("dark-mode");
+	});
+	document.querySelectorAll(".add-items").forEach((ele) => {
+		ele.classList.add("dark-mode-forms");
+	});
+	document.querySelector(".forms h3").classList.add("dark-mode");
+	// body
+	document.body.classList.add("dark-mode");
+
+	// color links
+	document.querySelectorAll(".links li a").forEach((ele) => {
+		ele.classList.add("sidemenu-color");
+	});
+	// side menu
+	document.querySelector(".side-menu").classList.add("sidemenu-dark");
+
+	if (btn.children[0].className == "fas fa-sun") {
+		btn.children[0].className = "fas fa-moon";
+		btn.classList.add("dark");
+		btn.classList.remove("light");
+	} else {
+		btn.children[0].className = "fas fa-sun";
+		btn.classList.add("light");
+		btn.classList.remove("dark");
+	}
+	// nav
+	document.querySelector("nav").classList.add("nav-dark-mode");
+}
+btn.onclick = function () {
+	darkMode = localStorage.getItem("darkMode");
+	if (darkMode !== "enable") {
+		enable();
+		console.log(darkMode);
+	} else {
+		disabled();
+		console.log(darkMode);
+	}
 };
 
 let sideMenuBtn = document.querySelector(".side-menu-btn");
@@ -61,10 +150,10 @@ function addsale() {
 					-- اختر منتج --
 				</option>
 	
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="mercedes">Mercedes</option>
-				<option value="audi">Audi</option>
+				<option value="nabil">nabil</option>
+				<option value="alaa">alaa</option>
+				<option value="cool">cool</option>
+				<option value="tadros">tadros</option>
 			</select>
 		</div>
 		<div class="group-form">
@@ -79,12 +168,13 @@ function addsale() {
 		</div>
 		<div class="group-form">
 			<label for="price">سعر البيع</label>
-			<input id="price${num}" type="number" name="price" />
+			<input id="price${num}" type="number" name="price" :value="name"/>
 		</div>
 		<div class="group-form">
 			<label for="total">المجموع</label>
 			<input id="total${num}" type="number" name="total" />
 		</div>
+		<a @Click="test" class="add-sales remove-items">حذف</a>
 	</div>`;
 
 	document.getElementById("demo").insertAdjacentHTML("beforeend", newSales);
@@ -111,6 +201,28 @@ function addsale() {
 			});
 		};
 	});
+	if (localStorage.getItem("darkMode") === "enable") {
+		document.querySelectorAll("input").forEach((ele) => {
+			ele.classList.add("dark-mode");
+		});
+		document.querySelectorAll("select").forEach((ele) => {
+			ele.classList.add("dark-mode");
+		});
+	} else {
+		document.querySelectorAll("input").forEach((ele) => {
+			ele.classList.remove("dark-mode");
+		});
+		document.querySelectorAll("select").forEach((ele) => {
+			ele.classList.remove("dark-mode");
+		});
+	}
+	if (document.getElementById("demo").children.length != 0) {
+		document.querySelectorAll(".remove-items").forEach((e) => {
+			e.onclick = function () {
+				e.parentElement.style.display = "none";
+			};
+		});
+	}
 }
 
 add.addEventListener("click", addsale);
@@ -131,3 +243,5 @@ quantity.forEach((q) => {
 		ftotal.value = price.value * q.value;
 	};
 });
+
+// console.log(document.getElementById("demo").children.length);

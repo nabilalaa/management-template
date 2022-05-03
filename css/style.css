@@ -96,6 +96,10 @@ body {
 .nav-dark-mode {
 	background-color: #343a40 !important;
 }
+.inner-dark-mode {
+	background-color: #343a40 !important;
+	color: #f8f9fa !important;
+}
 .dark {
 	max-width: 50px;
 	padding: 10px;
@@ -138,7 +142,7 @@ nav {
 	padding: 10px 40px;
 }
 
-.nav-options {
+.nav-items {
 	display: flex;
 	align-items: center;
 	max-width: 100%;
@@ -146,9 +150,6 @@ nav {
 }
 .logo {
 	margin-left: 30px;
-}
-.search-nav {
-	margin: 0 30px;
 }
 
 .side-menu-btn {
@@ -190,7 +191,7 @@ nav {
 	color: #212529;
 }
 
-/* start index */
+/* start index.html , report-sales.html*/
 .index {
 	margin-top: 30px;
 	padding: 0 50px;
@@ -200,7 +201,9 @@ nav {
 	width: 100%;
 	justify-content: space-between;
 }
-
+.chart-bars {
+	width: 100% !important;
+}
 .chart {
 	background-color: #f8f9fa;
 	display: flex;
@@ -215,7 +218,7 @@ nav {
 .chart p {
 	margin: 30px 0;
 }
-.chart-bar {
+.chart-line {
 	width: 100%;
 	height: 100%;
 	padding: 20px;
@@ -229,7 +232,10 @@ nav {
 	max-width: 285px;
 	margin: 10px auto;
 }
-
+.chart-bar {
+	background-color: #f8f9fa;
+	padding: 20px;
+}
 .chart-labels {
 	display: flex;
 	justify-content: space-evenly;
@@ -565,6 +571,10 @@ select {
 	background-color: #4bb543;
 	cursor: pointer;
 	border: 1px solid;
+}
+
+.remove-items {
+	background-color: #ff9494;
 }
 #demo {
 	width: 100%;
