@@ -118,6 +118,7 @@ if (darkMode == "enable") {
 	// nav
 	document.querySelector("nav").classList.add("nav-dark-mode");
 }
+
 btn.onclick = function () {
 	darkMode = localStorage.getItem("darkMode");
 	if (darkMode !== "enable") {
@@ -223,10 +224,25 @@ function addsale() {
 			};
 		});
 	}
+	// document.getElementById("demo").childElementCount;
+	// // console.log(document.getElementById("demo").childElementCount);
+	// for (let i = 0; i < document.getElementById("demo").childElementCount; i++) {
+	// 	document.getElementById("demo").innerHTML = localStorage.getItem("demo");
+	// 	console.log(i);9
+	// }
+		localStorage.setItem("demo", document.getElementById("demo").innerHTML);
 }
 
+console.log(location.href);
 add.addEventListener("click", addsale);
-
+if (localStorage.getItem("demo")) {
+	console.log("ss");
+	if (location.href == "http://127.0.0.1:5500/add-sales.html") {
+		document.getElementById("demo").innerHTML = localStorage.getItem("demo");
+	} else {
+		localStorage.removeItem("demo");
+	}
+}
 let quantity = document.querySelectorAll("#quantity"),
 	ftotal = document.getElementById("final-total");
 
